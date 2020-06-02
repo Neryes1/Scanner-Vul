@@ -3,6 +3,7 @@ from mac_vendor_lookup import MacLookup
 import nmap
 nm = nmap.PortScanner()
 
+
 nm.scan('192.168.1.0/24', arguments='-PU', sudo=True)
 for h in nm.all_hosts():
     if 'mac' in nm[h]['addresses']:
