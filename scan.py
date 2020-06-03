@@ -9,6 +9,8 @@ for h in nm.all_hosts():
     if 'mac' in nm[h]['addresses']:
       print('Fabricante: {}'.format(" ".join(nm[h]['vendor'].values())))
 
+      #teste git
+
 
 
 # inserindo MAC na mão para conferir com o resultado de cima
