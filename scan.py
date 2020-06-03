@@ -9,7 +9,7 @@ for h in nm.all_hosts():
     if 'mac' in nm[h]['addresses']:
       print('Fabricante: {}'.format(" ".join(nm[h]['vendor'].values())))
 
-      #teste git
+      #teste git de novo
 
 
 
