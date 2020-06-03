@@ -10,6 +10,7 @@ for h in nm.all_hosts():
       print('Fabricante: {}'.format(" ".join(nm[h]['vendor'].values())))
 
       #teste git de novo
+      
 
 
 
