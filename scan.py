@@ -3,17 +3,20 @@
 import nmap
 n = nmap.PortScanner()
 
+def extract_names_from(tcp):
+  for val in tcp.values():
+    print('Serviço: ', val["name"])
 
 n.scan('192.168.1.0/24', arguments='-n -PU', sudo=True)
 for host in n.all_hosts():
-    print('##################')    
-    print('IP : %s (%s)' % (host, n[host].hostname()))
-    if 'mac' in n[host]['addresses']:
-        print('Fabricante: {}'.format(" ".join(n[host]['vendor'].values())))
-    if '80' in n[host]['tcp']:
-        print('Serviço: %s' % (n[host].name()))
-    else:
-        print('Sem serviço..')
+  print(' ')    
+  print('IP : %s (%s)' % (host, n[host].hostname()))
+  if 'mac' in n[host]['addresses']:
+    print('Fabricante: {}'.format(" ".join(n[host]['vendor'].values())))
+  extract_names_from(n[host]["tcp"])
+
+   
+        
 
 
 
