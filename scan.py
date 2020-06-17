@@ -3,11 +3,14 @@
 import nmap
 n = nmap.PortScanner()
 
+#função para pegar os valores dentro do tcp   
 def extract_names_from(tcp):
   for val in tcp.values():
     print('Serviço: ', val["name"])
 
 n.scan('192.168.1.0/24', arguments='-n -PU', sudo=True)
+
+'''
 for host in n.all_hosts():
   print(' ')    
   print('IP : %s (%s)' % (host, n[host].hostname()))
@@ -15,8 +18,15 @@ for host in n.all_hosts():
     print('Fabricante: {}'.format(" ".join(n[host]['vendor'].values())))
   extract_names_from(n[host]["tcp"])
 
-   
-        
+
+'''        
+for host in n.all_hosts():
+  if 'host':
+    print(' ')    
+    print('IP : %s (%s)' % (host, n[host].hostname()))
+    extract_names_from(n[host]["tcp"])
+  else:
+    print('Nada encontrado')
 
 
 
