@@ -8,7 +8,7 @@
 import nmap
 
 '''
-  criando objeto n que reseberá o método PortScanner da 
+  criando objeto n que receberá o método PortScanner da 
   biblioteca nmap
 '''
 n = nmap.PortScanner()
@@ -37,4 +37,5 @@ for host in n.all_hosts():
     if 'mac' in n[host]['addresses']:
         print('Fabricante: {}'.format(" ".join(n[host]['vendor'].values())))
     extract_names_from(n[host]["tcp"])
+
 
